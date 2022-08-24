@@ -6,6 +6,7 @@ import Home from './pages/Home.vue'
 import Login from './pages/Login.vue'
 import Register from './pages/Register.vue'
 import Dashboard from './pages/Dashboard.vue'
+import index3 from './layouts/index3.vue'
 
 Vue.use(Router)
 
@@ -23,6 +24,9 @@ const router = new Router({
 		},
 		{
 			path:'/dashboard',name:'dashboard',component:Dashboard, meta : {requireAuth: true}
+		},
+    {
+			path:'/index3',name:'index3',component:index3, meta : {guest: true}
 		},
 	]
 });
