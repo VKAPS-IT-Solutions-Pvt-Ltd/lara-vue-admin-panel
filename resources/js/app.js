@@ -9,6 +9,7 @@ import store from './store'
 import App from './layouts/App'
 
 
+
 axios.defaults.withCredentials = false
 axios.defaults.baseURL= 'http://localhost:8000/api/'
 const token = localStorage.getItem('token')
@@ -39,13 +40,17 @@ axios.interceptors.response.use(undefined, function (error) {
 
 
 
-
+Vue.component('sidebar', require('./layouts/sidebar.vue').default);
+Vue.component('Vueheader', require('./layouts/header.vue').default);
+Vue.component('footer', require('./layouts/footer.vue').default);
 Vue.use(VueAxios, axios)
 Vue.use(VueRouter)
 
 const app = new Vue({
     store,
     el: '#app',
-    components: {App},
+    components: {
+      App,   
+    },
     router
 });
