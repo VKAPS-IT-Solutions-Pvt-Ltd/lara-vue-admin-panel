@@ -24,14 +24,9 @@
         </style>
     </head>
     <body  class="hold-transition sidebar-mini">
-        <div id="app" class="wrapper">
-            <Vueheader></Vueheader>
-           <sidebar></sidebar>
-            <App />
-            <footer></footer>
-        </div>
-
-
+   <div id="app">
+    <App />
+   </div>
         <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset ('plugins/jquery/jquery.min.js') }}"></script>

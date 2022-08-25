@@ -32,17 +32,7 @@ axios.interceptors.response.use(undefined, function (error) {
       store.commit('handle_error',JSON.parse(error.response.data.error));
     }
   }
-})
-
-
-
-
-
-
-
-Vue.component('sidebar', require('./layouts/sidebar.vue').default);
-Vue.component('Vueheader', require('./layouts/header.vue').default);
-Vue.component('footer', require('./layouts/footer.vue').default);
+});
 Vue.use(VueAxios, axios)
 Vue.use(VueRouter)
 
