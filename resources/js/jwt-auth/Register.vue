@@ -6,12 +6,7 @@
               <div class="card-body pt-4 pb-4">
                  <h1 class="text-muted">Register</h1>
 
-                 <div v-if="showError">
-                    <span v-if="errors">
-                       <small v-for="error in errors" :key="error" class="text-danger d-block">{{ error[0] }}</small>
-                    </span>
-                 </div>
-
+           
                  
                  <form action="" method="post" @submit.prevent="submit">
                     <div class="form-group">
@@ -31,6 +26,10 @@
                     <div class="form-group">
                        <label>Confirm Password</label>
                        <input type="password" name="" class="form-control" placeholder="Confirm Password" v-model="form.password_confirmation" />
+                    </div>
+
+                    <div class="form-group">
+                      <router-link to="/login">already have acount</router-link>
                     </div>
                     
                     <div class="row">

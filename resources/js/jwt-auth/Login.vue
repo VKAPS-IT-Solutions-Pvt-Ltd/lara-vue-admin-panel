@@ -19,7 +19,10 @@
 
                     <div class="row">
                        <div class="col-6 text-left">
-                          <a href="#" class="btn btn-link">Forgot Password</a>
+                          <router-link href="#" class="btn btn-link">Forgot Password</router-link>
+                       </div>
+                       <div class="col-6 text-left">
+                          <router-link to="/" class="btn btn-link">Register</router-link>
                        </div>
                        <div class="col-6 text-right">
                           <input type="submit" class="btn btn-primary pr-5 pl-5" value=" Login " />
@@ -36,7 +39,6 @@
 
 <script>
 import { mapActions } from 'vuex'
-
    export default{
     name:'Login',
     data(){
