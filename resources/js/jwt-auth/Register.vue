@@ -5,8 +5,11 @@
            <div class="card form-holder">
               <div class="card-body pt-4 pb-4">
                  <h1 class="text-muted">Register</h1>
-
-           
+                 <div v-if="showError">
+                    <span v-if="errors">
+                       <small v-for="error in errors" :key="error" class="text-danger d-block">{{ error[0] }}</small>
+                    </span>
+                 </div>           
                  
                  <form action="" method="post" @submit.prevent="submit">
                     <div class="form-group">

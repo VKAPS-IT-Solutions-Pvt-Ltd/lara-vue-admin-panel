@@ -86,15 +86,11 @@
 
          },
           resetTodo(){
-          
-                
-                this.todo_input = '';
+              this.todo_input = '';
                 this.edit_todo_id = '';
-                this.edit_index = '';
+                this.edit_index = '';    
+                  },
 
-         
-
-         },
           updateTodo(){
              if(this.todo_input.length > 0){
                 let data = {'name': this.todo_input};
@@ -108,10 +104,8 @@
              this.errors = "Invalid data";
             }
          }
-
-
-
         },
+        
         mounted() {
             this.axios.get(this.api).then(res=>{
                 this.todos = res.data;

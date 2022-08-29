@@ -8,6 +8,7 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <p>{{ user.name }}</p>
         </div>
         <div class="info">
           <a href="#" class="d-block"></a>
@@ -60,21 +61,10 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-         
           
-        
            <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="fa fa-product-hunt" aria-hidden="true"></i>
               <p>
                Product
                 <i class="fas fa-angle-left right"></i>
@@ -97,7 +87,7 @@
           </li>
              <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fa fa-user" aria-hidden="true"></i>
               <p>
                 User
                 <i class="fas fa-angle-left right"></i>
@@ -480,11 +470,13 @@
 </template>
 
 <script>
-export default {
-name:'sidebar',
-}
+  import { mapGetters} from "vuex";
+	export default{
+    name:'sidebar',
+		computed: {
+	    	...mapGetters({ user: "getUser"}),
+	 	},
+	}
 </script>
-
 <style>
-
 </style>
