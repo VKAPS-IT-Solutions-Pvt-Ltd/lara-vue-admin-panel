@@ -2,32 +2,35 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import store from './store'
 
-import Home from './pages/Home.vue'
-import Login from './pages/Login.vue'
-import Register from './pages/Register.vue'
-import Dashboard from './pages/Dashboard.vue'
+import Login from './jwt-auth/Login.vue'
+import Register from './jwt-auth/Register.vue'
+
+import Dashboard from './layouts/Dashboard.vue'
 
 import addProduct from './product/addProduct.vue'
+
+import ViewUser from './user/ViewUser.vue'
 
 Vue.use(Router)
 
 const router = new Router({
 	mode:'history',
 	routes:[
-		{
-			path:'',name:'home',component:Home
-		},
+		
 		{
 			path:'/login',name:'login',component:Login, meta : {guest: true}
 		},
 		{
-			path:'/register',name:'register',component:Register, meta : {guest: true}
+			path:'/',name:'register',component:Register, meta : {guest: true}
 		},
 		{
 			path:'/dashboard',name:'dashboard',component:Dashboard, meta : {requireAuth: true}
 		},
     {
 			path:'/addProduct',name:'product',component:addProduct
+		},
+    {
+			path:'/ViewUser',name:'ViewUser',component:ViewUser
 		},
     
 	]

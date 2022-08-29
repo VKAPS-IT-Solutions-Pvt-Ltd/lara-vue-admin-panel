@@ -5,6 +5,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueRouter from 'vue-router'
 import router from './router'
+
 import store from './store'
 import App from './layouts/App'
 

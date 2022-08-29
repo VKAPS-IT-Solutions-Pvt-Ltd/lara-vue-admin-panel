@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::post('register','AuthController@register');
 Route::post('login','AuthController@login');
 
 Route::group(['middleware'=>'jwt.verify'],function(){
-    Route::get('user','AuthController@getUser');
-    Route::resource('todos','TodoController');
+   
+ Route::resource('todos','TodoController');
+Route::resource('userData','ProductController');
+Route::resource('user','UserController');
 });

@@ -33,6 +33,7 @@
                 <button class="btn btn-navbar" type="button" data-widget="navbar-search">
                   <i class="fas fa-times"></i>
                 </button>
+                
               </div>
             </div>
           </form>
@@ -134,6 +135,9 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
+      <li class="nav-item">
+        <button class="btn btn-secondary text-white pl-3 pr-3 btn-sm" @click="logout()">Logout</button>
+      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -143,7 +147,13 @@
 
 <script>
 export default {
-name:'header',
+name:'Vueheader',
+methods: {
+        async logout (){
+            await this.$store.dispatch('logout')
+            this.$router.push('/login')
+        }
+      },
 }
 </script>
 
