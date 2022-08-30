@@ -5,8 +5,7 @@
 
 <script>
    export default{
-   	name:"App",
-      
+   	name:"App",     
    	computed : {
         isLoggedIn : function(){ 
          	return this.$store.getters.isLoggedIn
