@@ -11,6 +11,8 @@ import addProduct from './product/addProduct.vue'
 
 import ViewUser from './user/ViewUser.vue'
 
+import addUser from './user/addUser.vue'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -19,6 +21,9 @@ const router = new Router({
 		
 		{
 			path:'/login',name:'login',component:Login, meta : {guest: true}
+		},
+    {
+			path:'/addUser',name:'addUser',component:addUser
 		},
 		{
 			path:'/',name:'register',component:Register, meta : {guest: true}

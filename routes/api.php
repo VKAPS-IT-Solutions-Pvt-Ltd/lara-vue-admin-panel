@@ -17,9 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('register','AuthController@register');
 Route::post('login','AuthController@login');
 
-Route::group(['middleware'=>'jwt.verify'],function(){
-   
- Route::resource('todos','TodoController');
-Route::resource('userData','ProductController');
-Route::resource('user','UserController');
+
+Route::group(['middleware'=>'jwt.verify'],function(){   
+    Route::resource('todos','TodoController');
+    Route::resource('user','UserController');
 });

@@ -8,7 +8,9 @@ import router from './router'
 
 import store from './store'
 import App from './layouts/App'
-
+import jQuery from "jquery";
+const $ = jQuery;
+window.$ = $;
 
 
 axios.defaults.withCredentials = false

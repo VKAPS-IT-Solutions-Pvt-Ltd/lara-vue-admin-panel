@@ -39,7 +39,7 @@
                        <div class="col-4 text-left">
                        </div>
                        <div class="col-8 text-right">
-                          <input type="submit" class="btn btn-primary pr-5 pl-5" value=" Register " />
+                          <input type="submit" class="btn btn-primary pr-5 pl-5" value="Register" />
                        </div>
                     </div>
                  </form>

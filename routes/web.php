@@ -17,6 +17,11 @@ Route::any('{any}', function(){
     return view('welcome');
 })->where('any', '.*');
 
+Route::get('/frontend', function()
+{
+    return view('frontend');
+});
+
 
 // Auth::routes();
 
