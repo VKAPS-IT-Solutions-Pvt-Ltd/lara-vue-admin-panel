@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     use HasFactory;
+    protected $fillable = ['name' ,'slug'];
+    
+    public function permissions(){
+       return $this->belongsTomany(permission::class , 'roles_permissions');
+    }
+    public function users(){
+        return $this->belongsTomany(User::class , 'users_roles');
+     }
 }
