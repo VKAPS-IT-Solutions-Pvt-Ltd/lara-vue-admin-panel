@@ -12,7 +12,6 @@ import jQuery from "jquery";
 const $ = jQuery;
 window.$ = $;
 
-
 axios.defaults.withCredentials = false
 axios.defaults.baseURL= 'http://localhost:8000/api/'
 const token = localStorage.getItem('token')

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use DB;
 use JWTAuth;
 
 class AuthController extends Controller
@@ -13,8 +14,10 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required',
-        ]);
-
+        ]);      
+            // $user_email = $request->email;
+            // $role = DB::table('users')->where('email', $user_email)->first();
+            // return $role->role_id;           
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
@@ -22,6 +25,7 @@ class AuthController extends Controller
         if (! $token = JWTAuth::attempt($validator->validated())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
+    
         return $this->createNewToken($token);
     }
 
@@ -65,5 +69,6 @@ class AuthController extends Controller
     public function refresh() {
         return $this->createNewToken(auth()->refresh());
     }
+    
 
 }
