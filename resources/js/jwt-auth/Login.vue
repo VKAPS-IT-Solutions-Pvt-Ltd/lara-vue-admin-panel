@@ -8,20 +8,20 @@
                   <form action="" method="post" @submit.prevent="submit">
                      <div class="form-group">
                         <label>Email</label>
-                        <input type="text" name="" class="form-control" placeholder="Email" v-model="form.email"/>
+                        <input type="text" name="" class="form-control" placeholder="Email" v-model="form.email" />
                      </div>
                      <div class="form-group">
                         <label>Password</label>
-                        <input type="password" name="" class="form-control" placeholder="Password" v-model="form.password" />
+                        <input type="password" name="" class="form-control" placeholder="Password"
+                           v-model="form.password" />
                      </div>
-                     
+
                      <p v-if="showError" class="text-danger">Username or Password is incorrect</p>
- 
+
                      <div class="row">
                         <div class="col-6 text-right">
-                          
-                      <router-link to="/">register</router-link>
-                    
+
+                           <router-link to="/">register</router-link>
                            <input type="submit" class="btn btn-primary pr-5 pl-5" value=" Login " />
                         </div>
                      </div>
@@ -31,44 +31,47 @@
          </div>
       </div>
    </div>
- </template>
+</template>
  
  
- <script>
- import { mapActions } from 'vuex'
-    export default{
-     name:'Login',
-     data(){
-       return{
-          form:{
-             email:'',
-             password:''
-          },
-          showError: false,
-       }
-     },
- 
-     methods:{
-        ...mapActions(["login"]),
- 
-         submit: function () {
-            this.$store.dispatch('login', this.form)
-           .then(() => this.$router.push('/dashboard'))
-           .catch(err => {
-           this.showError = true;
-         });
-         }
-     }
-     
-     }
- </script>
- 
- 
- 
- <style>
- 
- .form-holder{
-    margin-top:20%;
-    margin-bottom:20%;
- }
- </style>
+<script>
+import { mapActions } from 'vuex'
+export default {
+   name: 'Login',
+
+   data() {
+      return {
+         form: {
+            email: '',
+            password: ''
+         },
+         showError: false,
+         role_id: '',
+      }
+   },
+
+   methods: {
+      ...mapActions(["login"]),
+
+      submit: function () {
+         this.$store.dispatch('login', this.form)
+            .then(resp => {
+               if (localStorage.getItem("role_id")) {
+                  this.$router.push('/dashboard');
+               }
+
+            })
+            .catch(err => {
+               this.showError = true;
+            });
+      }
+   }
+
+}
+</script>
+<style>
+.form-holder {
+   margin-top: 20%;
+   margin-bottom: 20%;
+}
+</style>

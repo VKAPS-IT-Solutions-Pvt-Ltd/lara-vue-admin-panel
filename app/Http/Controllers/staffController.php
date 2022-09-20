@@ -1,21 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 
-class UserController extends Controller
-{    /**
+class staffController extends Controller
+{
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $data = User::all();
-        return response()->json($data);
+        $role_id = 2 ;
+        $staff = User::all()->where('role_id',$role_id);
+        return response()->json($staff);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,6 +27,7 @@ class UserController extends Controller
     {
         //
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -33,7 +36,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-      
+        //
     }
 
     /**
@@ -44,8 +47,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-      
+        //
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -56,6 +60,7 @@ class UserController extends Controller
     {
         //
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -66,12 +71,8 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $user = User::find($id);
-        $user->update([
-         'name'=>$request->name ,
-         'email'=> $request->email]);
-        return response()->json('updated successfully');
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -80,8 +81,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        return response()->json('User deleted successfully!');
+        //
     }
 }
